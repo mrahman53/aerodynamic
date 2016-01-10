@@ -23,13 +23,14 @@ public class HomePage extends Base {
 
         List<WebElement> elements = new ArrayList<WebElement>();
         sleep(1);
-        elements = ad.findElements(By.xpath("//UIAApplication[1]/UIAWindow[2]/UIATableView[1]"));
+        elements = ad.findElements(By.xpath("//UIAApplication[1]/UIAWindow[2]/UIATableView[1]/UIATableCell"));
         sleep(1);
 
         for(int i=1; i<elements.size(); i++){
-            clickByXpathWebElement(elements.get(i));
-            sleep(2);
-            clickByXpath(" //UIAApplication[1]/UIAWindow[2]/UIATableView[1]/UIATableCell["+i+"]");
+            clickByXpath("//UIAApplication[1]/UIAWindow[2]/UIATableView[1]/UIATableCell["+i+"]");
+            sleep(1);
+            clickByXpath("//UIAApplication[1]/UIAWindow[2]/UIANavigationBar[1]/UIAButton[1]");
+            sleep(1);
     }
-    }
+ }
 }
